@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#B90B0B</color>
+    <color name="colorPrimaryDark">#A90B0B</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="black">#000</color>
+    <color name="gold">#FFDF00</color>
+    <color name="green">#259D0B</color>
+    <color name="brown">#D2691E</color>
+    <color name="old_gold">#CFB53B</color>
+    <color name="deep_red">#A90B0B</color>
+    <color name="white">#ffffff</color>
+    <color name="mild_gold">#C19B18</color>
+    <color name="orange">#FC8C0D</color>
+</resources>

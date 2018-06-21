@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">ScoreKeeper</string>
+    <string name="teamA">Griffindor</string>
+    <string name="teamB">Slytherin</string>
+    <string name="zero">0</string>
+    <string name="ten_points">10 points</string>
+    <string name="five_points">5 points</string>
+    <string name="foul">foul</string>
+    <string name="todo">TODO</string>
+    <string name="comment">comments</string>
+    <string name="description">description</string>
+    <string name="share">share</string>
+    <string name="reset">reset</string>
+    <string name="quaffle_hit">Quaffle is hit into the Hoops!</string>
+    <string name="another_10"> Another 10 points for Griffindor!</string>
+    <string name="points_10A">Griffindor scored 10 points!</string>
+    <string name="points_5A">Griffindor scored 5 points!</string>
+    <string name="another_5A">Another 5 points for Griffindor!</string>
+    <string name="bludger_hit">Bludger is hit into the Hoops!</string>
+    <string name="foul_">A foul is made!</string>
+    <string name="grifflose">Griffindor loses 2 points!</string>
+    <string name="points_10B">Slytherin scored 10 points!</string>
+    <string name="points_5B">Slytherin scored 5 points!</string>
+    <string name="another_10B"> Another 10 points for Slytherin!</string>
+    <string name="another_5B">Another 5 points for Slytherin!</string>
+    <string name="slytlose">Slytherin loses 2 points!</string>
+    <string name="reached_150">150 Points is reached</string>
+    <string name="griff_won">Griffindor won the match!!!</string>
+    <string name="slyt_won">Slytherin won the match!!!</string>
+    <string name="snitch">Snitch is catched!!</string>
+    <string name="snitch_img">Snitch image</string>
+    <string name="start_again">Lets start the Match Again!!</string>
+</resources>
