@@ -7,7 +7,6 @@
     android:fillViewport="true"
     tools:context=".MainActivity">
 
-
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
@@ -16,7 +15,7 @@
         android:orientation="vertical">
 
         <LinearLayout
-            android:id="@+id/scorebox"
+            android:id="@+id/scoreBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:baselineAligned="false"
@@ -29,83 +28,44 @@
                 android:orientation="vertical">
 
                 <TextView
+                    style="@style/TopStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
                     android:background="@color/gold"
-                    android:fontFamily="serif-monospace"
-                    android:text="@string/teamA"
-                    android:textAllCaps="true"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/twenty_five"
-                    android:textStyle="bold" />
+                    android:text="@string/teamA" />
 
                 <TextView
                     android:id="@+id/score_forA"
+                    style="@style/ScoreCard"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="@dimen/twelve"
-                    android:background="@drawable/rounded"
-                    android:text="@string/zero"
-                    android:textAlignment="center"
-                    android:textColor="@color/gold"
-                    android:textSize="@dimen/sixty" />
+                    android:layout_height="wrap_content" />
 
                 <Button
+                    style="@style/MyButton"
                     android:layout_width="wrap_content"
-                    android:layout_height="@dimen/forty"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="@dimen/ten"
-                    android:layout_marginTop="@dimen/eight"
-                    android:background="@color/deep_red"
-
-                    android:fontFamily="sans-serif-condensed"
                     android:onClick="forTeamA"
-                    android:paddingBottom="0dp"
                     android:tag="1"
-                    android:text="@string/ten_points"
-                    android:textColor="@color/white"
-                    android:textStyle="bold" />
+                    android:text="@string/ten_points" />
 
                 <Button
+                    style="@style/MyButton"
                     android:layout_width="wrap_content"
-                    android:layout_height="@dimen/forty"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="@dimen/ten"
-                    android:layout_marginTop="@dimen/four"
-                    android:background="@color/deep_red"
-                    android:fontFamily="sans-serif-condensed"
                     android:onClick="forTeamA"
                     android:tag="2"
-                    android:text="@string/five_points"
-                    android:textColor="@color/white"
-                    android:textStyle="bold" />
+                    android:text="@string/five_points" />
 
                 <Button
+                    style="@style/MyButton"
                     android:layout_width="wrap_content"
-                    android:layout_height="@dimen/forty"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="@dimen/ten"
-                    android:layout_marginTop="@dimen/four"
-                    android:background="@color/deep_red"
-                    android:fontFamily="sans-serif-condensed"
                     android:onClick="forTeamA"
                     android:tag="3"
-                    android:text="@string/foul"
-                    android:textColor="@color/white"
-                    android:textStyle="bold" />
+                    android:text="@string/foul" />
 
                 <ImageView
-                    android:layout_width="@dimen/seventy"
-                    android:layout_height="@dimen/seventy"
-                    android:layout_gravity="center"
+                    style="@style/ImageView"
                     android:contentDescription="@string/todo"
-                    android:onClick="caughtsnitch"
-                    android:src="@drawable/gold_snitch"
                     android:tag="1" />
             </LinearLayout>
-
 
             <LinearLayout
                 android:layout_width="@dimen/zero"
@@ -114,83 +74,45 @@
                 android:orientation="vertical">
 
                 <TextView
+                    style="@style/TopStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
                     android:background="@color/green"
-                    android:fontFamily="serif-monospace"
-                    android:text="@string/teamB"
-                    android:textAllCaps="true"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/twenty_five"
-                    android:textStyle="bold" />
+                    android:text="@string/teamB" />
 
                 <TextView
                     android:id="@+id/score_forB"
+                    style="@style/ScoreCard"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="@dimen/twelve"
-                    android:background="@drawable/rounded"
-                    android:text="@string/zero"
-                    android:textAlignment="center"
-                    android:textColor="@color/gold"
-                    android:textSize="@dimen/sixty" />
+                    android:layout_height="wrap_content" />
 
                 <Button
+                    style="@style/MyButton"
                     android:layout_width="wrap_content"
-                    android:layout_height="@dimen/forty"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="@dimen/ten"
-                    android:layout_marginTop="@dimen/eight"
-                    android:background="@color/deep_red"
-                    android:fontFamily="sans-serif-condensed"
                     android:onClick="forTeamB"
-                    android:paddingBottom="0dp"
                     android:tag="1"
-                    android:text="@string/ten_points"
-                    android:textColor="@color/white"
-                    android:textStyle="bold" />
+                    android:text="@string/ten_points" />
 
                 <Button
+                    style="@style/MyButton"
                     android:layout_width="wrap_content"
-                    android:layout_height="@dimen/forty"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="@dimen/ten"
-                    android:layout_marginTop="@dimen/four"
-                    android:background="@color/deep_red"
-                    android:fontFamily="sans-serif-condensed"
                     android:onClick="forTeamB"
                     android:tag="2"
-                    android:text="@string/five_points"
-                    android:textColor="@color/white"
-                    android:textStyle="bold" />
+                    android:text="@string/five_points" />
 
                 <Button
+                    style="@style/MyButton"
                     android:layout_width="wrap_content"
-                    android:layout_height="@dimen/forty"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="@dimen/ten"
-                    android:layout_marginTop="@dimen/three"
-                    android:background="@color/deep_red"
-                    android:fontFamily="sans-serif-condensed"
                     android:onClick="forTeamB"
                     android:tag="3"
-                    android:text="@string/foul"
-                    android:textColor="@color/white"
-                    android:textStyle="bold" />
+                    android:text="@string/foul" />
 
                 <ImageView
-                    android:layout_width="@dimen/seventy"
-                    android:layout_height="@dimen/seventy"
-                    android:layout_gravity="center"
+                    style="@style/ImageView"
                     android:contentDescription="@string/snitch_img"
-                    android:onClick="caughtsnitch"
-                    android:src="@drawable/gold_snitch"
                     android:tag="2" />
 
             </LinearLayout>
-
 
         </LinearLayout>
 
@@ -198,60 +120,35 @@
             android:id="@+id/comments"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/scorebox"
+            android:layout_below="@id/scoreBox"
             android:orientation="vertical">
 
 
             <TextView
                 android:id="@+id/comment"
+                style="@style/CommentSection"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/thirty_five"
-                android:layout_marginEnd="@dimen/twelve"
-                android:layout_marginStart="@dimen/twelve"
-                android:layout_marginTop="@dimen/fifteen"
-                android:background="@color/orange"
-                android:gravity="center"
-                android:hint="@string/comment"
-                android:text=""
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="@dimen/twenty"
-                android:textStyle="bold" />
+                android:hint="@string/comment" />
 
             <TextView
                 android:id="@+id/result"
+                style="@style/CommentSection"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/fifty"
-                android:layout_marginEnd="@dimen/twelve"
-                android:layout_marginStart="@dimen/twelve"
-                android:layout_marginTop="@dimen/fifteen"
-                android:background="@color/orange"
-                android:gravity="center"
-                android:hint="@string/description"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="@dimen/twenty"
-                android:textStyle="bold" />
+                android:hint="@string/description" />
         </LinearLayout>
-
-
 
         <Button
             android:id="@+id/reset"
+            style="@style/MyButton"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
             android:layout_below="@+id/comments"
+            android:layout_centerHorizontal="true"
             android:layout_marginEnd="@dimen/sixty_dp"
             android:layout_marginStart="@dimen/sixty_dp"
             android:layout_marginTop="@dimen/twelve"
-            android:background="@color/deep_red"
             android:onClick="reset"
-            android:text="@string/reset"
-            android:textColor="@color/white" />
-
-
+            android:text="@string/reset" />
     </RelativeLayout>
-
-
 </ScrollView>

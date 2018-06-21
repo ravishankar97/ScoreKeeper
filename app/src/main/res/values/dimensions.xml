@@ -15,4 +15,5 @@
     <dimen name="fifty">50dp</dimen>
     <dimen name="sixty_dp">60dp</dimen>
     <dimen name="zero">0dp</dimen>
+    <dimen name="five">5dp</dimen>
 </resources>

@@ -30,4 +30,5 @@
     <string name="snitch">Snitch is catched!!</string>
     <string name="snitch_img">Snitch image</string>
     <string name="start_again">Lets start the Match Again!!</string>
+    <string name="restartGame">Click the reset to start the match again</string>
 </resources>

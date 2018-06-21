@@ -9,17 +9,16 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     TextView textView;
-    TextView result_box;
-    TextView comment_box;
+    TextView resultBox;
+    TextView commentBox;
     Toast toast;
-    public int markforA = 0;
-    int f = 0;
-    int g = 0;
-    public int markforB = 0;
-    public int maketoast = 0;
-    public String firstbox;
-    public String secondbox;
-
+    public int markForA = 0;
+    int firstTimeScoreBy_A = 0;
+    int firstTimeScoreBy_B = 0;
+    public int markForB = 0;
+    public int makeToast = 0;
+    public String firstBox;
+    public String secondBox;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,149 +29,129 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-
-        comment_box = findViewById(R.id.comment);
-        firstbox = comment_box.getText().toString();
-
-        result_box = findViewById(R.id.result);
-        secondbox = result_box.getText().toString();
-
-        outState.putInt("teamA_score", markforA);
-        outState.putInt("teamB_score", markforB);
-        outState.putInt("maketoast_pass", maketoast);
-        outState.putString("com", firstbox);
-        outState.putString("res", secondbox);
+        commentBox = findViewById(R.id.comment);
+        firstBox = commentBox.getText().toString();
+        resultBox = findViewById(R.id.result);
+        secondBox = resultBox.getText().toString();
+        outState.putInt("teamA_score", markForA);
+        outState.putInt("teamB_score", markForB);
+        outState.putInt("makeToast_pass", makeToast);
+        outState.putString("com", firstBox);
+        outState.putString("res", secondBox);
     }
 
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-        markforA = savedInstanceState.getInt("teamA_score");
-        markforB = savedInstanceState.getInt("teamB_score");
-        displayMarkA(markforA);
-        displayMarkB(markforB);
-        maketoast = savedInstanceState.getInt("maketoast_pass");
-        comment_box = findViewById(R.id.comment);
-        String str1 = savedInstanceState.getString("com");
-        String str2 = savedInstanceState.getString("res");
-        comment_box.setText(str1);
-        result_box = findViewById(R.id.result);
-        result_box.setText(str2);
+        markForA = savedInstanceState.getInt("teamA_score");
+        markForB = savedInstanceState.getInt("teamB_score");
+        displayMarkA(markForA);
+        displayMarkB(markForB);
+        makeToast = savedInstanceState.getInt("makeToast_pass");
+        commentBox = findViewById(R.id.comment);
+        String stringFromComment;
+        String strFromResult;
+        stringFromComment = savedInstanceState.getString("com");
+        strFromResult = savedInstanceState.getString("res");
+        commentBox.setText(stringFromComment);
+        resultBox = findViewById(R.id.result);
+        resultBox.setText(strFromResult);
     }
 
     public void forTeamA(View view) {
-        if (maketoast == 1) {
-            maketoast();
+        if (makeToast == 1) {
+            makeToast();
         } else {
-
             if (Integer.parseInt((String) view.getTag()) == 1) {
-                markforA += 10;
+                markForA += 10;
                 textView = findViewById(R.id.comment);
                 textView.setText(R.string.quaffle_hit);
                 textView = findViewById(R.id.result);
-                if (f == 0) {
+                if (firstTimeScoreBy_A == 0) {
                     textView.setText(R.string.points_10A);
-                    f = 1;
+                    firstTimeScoreBy_A = 1;
                 } else
                     textView.setText(R.string.another_10);
             } else if (Integer.parseInt((String) view.getTag()) == 2) {
-                markforA += 5;
+                markForA += 5;
                 textView = findViewById((R.id.comment));
                 textView.setText(R.string.bludger_hit);
                 textView = findViewById(R.id.result);
-                if (f == 0) {
+                if (firstTimeScoreBy_A == 0) {
                     textView.setText(R.string.points_5A);
-                    f = 1;
+                    firstTimeScoreBy_A = 1;
                 } else
                     textView.setText(R.string.another_5A);
             } else if (Integer.parseInt((String) view.getTag()) == 3) {
-                markforA -= 2;
+                markForA -= 2;
                 textView = findViewById((R.id.comment));
                 textView.setText(R.string.foul_);
                 textView = findViewById(R.id.result);
-
                 textView.setText(R.string.grifflose);
-
             }
-            displayMarkA(markforA);
-
-            checkForResult(markforA, 1);
+            displayMarkA(markForA);
+            checkForResult(markForA, 1);
         }
-
     }
 
     public void displayMarkA(int mark) {
         TextView textView = findViewById(R.id.score_forA);
-        textView.setText("" + mark);
+        textView.setText(String.valueOf(mark));
     }
 
-
     public void forTeamB(View view) {
-        if (maketoast == 1) {
-            maketoast();
+        if (makeToast == 1) {
+            makeToast();
         } else {
-
             if (Integer.parseInt((String) view.getTag()) == 1) {
-                markforB += 10;
+                markForB += 10;
                 textView = findViewById(R.id.comment);
                 textView.setText(R.string.quaffle_hit);
                 textView = findViewById(R.id.result);
-                if (g == 0) {
+                if (firstTimeScoreBy_B == 0) {
                     textView.setText(R.string.points_10B);
-                    g = 1;
+                    firstTimeScoreBy_B = 1;
                 } else
                     textView.setText(R.string.another_10B);
             } else if (Integer.parseInt((String) view.getTag()) == 2) {
-                markforB += 5;
+                markForB += 5;
                 textView = findViewById((R.id.comment));
                 textView.setText(R.string.bludger_hit);
                 textView = findViewById(R.id.result);
-                if (g == 0) {
+                if (firstTimeScoreBy_B == 0) {
                     textView.setText(R.string.points_5B);
-                    g = 1;
+                    firstTimeScoreBy_B = 1;
                 } else
                     textView.setText(R.string.another_5B);
             } else if (Integer.parseInt((String) view.getTag()) == 3) {
-                markforB -= 2;
+                markForB -= 2;
                 textView = findViewById((R.id.comment));
                 textView.setText(R.string.foul);
                 textView = findViewById(R.id.result);
-
                 textView.setText(R.string.slytlose);
-
             }
-            displayMarkB(markforB);
-            checkForResult(markforB, 2);
+            displayMarkB(markForB);
+            checkForResult(markForB, 2);
         }
-
-
     }
-
 
     public void displayMarkB(int mark) {
         textView = findViewById(R.id.score_forB);
-        textView.setText("" + mark);
-
+        textView.setText(String.valueOf(mark));
     }
 
     public void reset(View view) {
-        markforA = 0;
-        markforB = 0;
-        f = 0;
-        g = 0;
-
-        displayMarkA(markforA);
-        displayMarkB(markforB);
-
-        result_box = findViewById(R.id.result);
-        result_box.setText(R.string.start_again);
-        comment_box = findViewById(R.id.comment);
-        comment_box.setText("");
-
-
-        maketoast = 0;
-
-
+        markForA = 0;
+        markForB = 0;
+        firstTimeScoreBy_A = 0;
+        firstTimeScoreBy_B = 0;
+        displayMarkA(markForA);
+        displayMarkB(markForB);
+        resultBox = findViewById(R.id.result);
+        resultBox.setText(R.string.start_again);
+        commentBox = findViewById(R.id.comment);
+        commentBox.setText("");
+        makeToast = 0;
     }
 
     public void checkForResult(int marks, int team) {
@@ -182,51 +161,47 @@ public class MainActivity extends AppCompatActivity {
                 textView.setText(R.string.reached_150);
                 textView = findViewById((R.id.result));
                 textView.setText(R.string.griff_won);
-                maketoast = 1;
+                makeToast = 1;
 
             } else if (team == 2) {
                 textView = findViewById(R.id.comment);
                 textView.setText(R.string.reached_150);
                 textView = findViewById((R.id.result));
                 textView.setText(R.string.slyt_won);
-                maketoast = 1;
-
+                makeToast = 1;
             }
         }
     }
 
-    public void maketoast() {
+    public void makeToast() {
         Context context = getApplicationContext();
         int duration = Toast.LENGTH_SHORT;
-        String toast_message = "Click the reset to start the match again";
+        String toast_message = getString(R.string.restartGame);
         if (toast != null) {
             toast.cancel();
         }
         toast = Toast.makeText(context, toast_message, duration);
         toast.show();
-
     }
 
-    public void caughtsnitch(View view) {
-        if (Integer.parseInt((String) view.getTag()) == 1 && maketoast == 0) {
-            markforA += 150;
-            displayMarkA(markforA);
+    public void caughtSnitch(View view) {
+        if (Integer.parseInt((String) view.getTag()) == 1 && makeToast == 0) {
+            markForA += 150;
+            displayMarkA(markForA);
             textView = findViewById(R.id.comment);
             textView.setText(R.string.snitch);
             textView = findViewById(R.id.result);
             textView.setText(R.string.griff_won);
-            maketoast = 1;
-        } else if (Integer.parseInt((String) view.getTag()) == 2 && maketoast == 0) {
-            markforB += 150;
-            displayMarkB(markforB);
+            makeToast = 1;
+        } else if (Integer.parseInt((String) view.getTag()) == 2 && makeToast == 0) {
+            markForB += 150;
+            displayMarkB(markForB);
             textView = findViewById(R.id.comment);
             textView.setText(R.string.snitch);
             textView = findViewById(R.id.result);
             textView.setText(R.string.slyt_won);
-            maketoast = 1;
+            makeToast = 1;
         } else
-            maketoast();
+            makeToast();
     }
-
-
 }
